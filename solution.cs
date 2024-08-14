@@ -1,3 +1,7 @@
-function mySetTimeout(fn, delay) {
-    setTimeout(fn, delay);
+function mySetInterval(fn, delay) {
+    function interval() {
+        fn();
+        setTimeout(interval, delay);
+    }
+    interval();
 }
